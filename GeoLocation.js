@@ -1,16 +1,17 @@
-function getLocation() {
-  let location;
-  if (navigator.geolocation) {
-    location = navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    location = "Unable to find the location."
-  }
-}
+let lat = null;
+let log = null;
 
-function showPosition(position) {
- return "Latitude: " + position.coords.latitude + " && Longitude: " + position.coords.longitude;
+function successFunction(position) {
+  var lat = position.coords.latitude;
+  var long = position.coords.longitude;
 }
 
 export const getGeoLocation = function () {
-  return getLocation();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction);
+  } else {
+    console.log('Error!!!');
+  }
+
+  return "Latitude: " + lat + " && Longitude: " + log;
 }
