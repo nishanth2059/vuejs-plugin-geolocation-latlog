@@ -13,5 +13,5 @@ How to use
 // use get geolocation function
 import { getGeoLocation } from 'vuejs-plugin-geolocation-latlog'
 
-getGeoLocation().then().catch()
+getGeoLocation()
 ```
