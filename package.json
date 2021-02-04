@@ -1,6 +1,6 @@
 {
   "name": "@nishanth2059/vuejs-plugin-geolocation-latlog",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Geo location fetching plugin for your Vue application",
   "github": "https://github.com/nishanth2059/vuejs-plugin-geolocation-latlog",
   "main": "GeoLocation.js",

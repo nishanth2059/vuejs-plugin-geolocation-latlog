@@ -13,5 +13,12 @@ How to use
 // use get geolocation function
 import { getGeoLocation } from 'vuejs-plugin-geolocation-latlog'
 
-getGeoLocation()
+getGeoLocation.then(
+    (value) => {
+        alert(value);
+    },
+    (error) => {
+        alert(error);
+    }
+);
 ```
