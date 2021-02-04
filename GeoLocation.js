@@ -1,17 +1,9 @@
-let lat = null;
-let log = null;
-
-function successFunction(position) {
-  var lat = position.coords.latitude;
-  var long = position.coords.longitude;
-}
-
-export const getGeoLocation = function () {
+export const getGeoLocation = new Promise(function (myResolve, myReject) {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successFunction);
+    navigator.geolocation.getCurrentPosition(function (position) {
+      myResolve("Latitude: " + position.coords.latitude + " && Longitude: " + position.coords.longitude);
+    });
   } else {
-    console.log('Error!!!');
+    myReject("Something went wrong!!!");
   }
-
-  return "Latitude: " + lat + " && Longitude: " + log;
-}
+});
